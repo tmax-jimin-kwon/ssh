@@ -8,9 +8,9 @@ resource "aws_instance" "blue" {
 
   subnet_id              = module.vpc.public_subnets[count.index % length(module.vpc.public_subnets)]
   vpc_security_group_ids = [module.ssh_security_group.this_security_group_id]
-  user_data = templatefile("${path.module}/init-script.sh", {
-    file_content = "version 1.0 - #${count.index}"
-  })
+#   user_data = templatefile("${path.module}/init-script.sh", {
+#     file_content = "version 1.0 - #${count.index}"
+#   })
 
   tags = {
     Name = "ssh-test-${count.index}"
