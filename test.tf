@@ -1,5 +1,5 @@
-resource "aws_instance" "blue" {
-  count = var.enable_blue_env ? var.blue_instance_count : 0
+resource "aws_instance" "test" {
+  count = var.enable_test_env ? var.test_instance_count : 0
 
   ami                    = data.aws_ami.amazon_linux.id
   instance_type          = "t2.micro"
@@ -17,16 +17,16 @@ resource "aws_instance" "blue" {
   }
 }
 
-resource "aws_lb_target_group" "blue" {
-  name     = "blue-tg-${random_pet.app.id}-lb"
+resource "aws_lb_target_group" "test" {
+  name     = "test-tg-${random_pet.app.id}-lb"
   port     = 22
   protocol = "TCP"
   vpc_id   = module.vpc.vpc_id
 }
 
-resource "aws_lb_target_group_attachment" "blue" {
-  count            = length(aws_instance.blue)
-  target_group_arn = aws_lb_target_group.blue.arn
-  target_id        = aws_instance.blue[count.index].id
+resource "aws_lb_target_group_attachment" "test" {
+  count            = length(aws_instance.test)
+  target_group_arn = aws_lb_target_group.test.arn
+  target_id        = aws_instance.test[count.index].id
   port             = 22
 }
