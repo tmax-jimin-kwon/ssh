@@ -58,14 +58,14 @@ variable "private_subnet_cidr_blocks" {
   ]
 }
 
-variable "enable_blue_env" {
-  description = "Enable blue environment"
+variable "enable_test_env" {
+  description = "Enable test environment"
   type        = bool
   default     = true
 }
 
-variable "blue_instance_count" {
-  description = "Number of instances in blue environment"
+variable "test_instance_count" {
+  description = "Number of instances in test environment"
   type        = number
   default     = 2
 }
