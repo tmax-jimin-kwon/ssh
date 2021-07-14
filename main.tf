@@ -34,7 +34,7 @@ module "ssh_security_group" {
   ingress_cidr_blocks = ["0.0.0.0/0"]
 }
 
-data "aws_ami" "rhel8.2" {
+data "aws_ami" "rhel8" {
   most_recent = true
 #   owners      = ["amazon"]
 
