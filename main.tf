@@ -34,15 +34,15 @@ module "ssh_security_group" {
   ingress_cidr_blocks = ["0.0.0.0/0"]
 }
 
-# data "aws_ami" "rhel8" {
-#   most_recent = true
-#   owners      = ["aws-marketplace"]
+data "aws_ami" "amazon_linux" {
+  most_recent = true
+  owners      = ["amazon"]
 
-#   filter {
-#     name   = "name"
-#     values = ["SupportedImages RHEL 8.2*"]
-#   }
-# }
+  filter {
+    name   = "name"
+    values = ["amzn2-ami-hvm-*-x86_64-gp2"]
+  }
+}
 
 resource "random_pet" "app" {
   length    = 2
