@@ -34,13 +34,13 @@ module "ssh_security_group" {
   ingress_cidr_blocks = ["0.0.0.0/0"]
 }
 
-data "aws_ami" "amazon_linux" {
+data "aws_ami" "rhel8.2" {
   most_recent = true
-  owners      = ["amazon"]
+#   owners      = ["amazon"]
 
   filter {
     name   = "name"
-    values = ["amzn2-ami-hvm-*-x86_64-gp2"]
+    values = ["ami-01fe4e01d242f9032"]
   }
 }
 
