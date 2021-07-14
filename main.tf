@@ -39,7 +39,7 @@ data "aws_ami" "rhel8" {
 #   owners      = ["amazon"]
 
   filter {
-    name   = "name"
+    name   = "imageid"
     values = ["ami-01fe4e01d242f9032"]
   }
 }
