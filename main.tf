@@ -36,7 +36,7 @@ module "ssh_security_group" {
 
 data "aws_ami" "rhel8" {
   most_recent = true
-#   owners      = ["amazon"]
+  owners      = ["amazon"]
 
   filter {
     name   = "imageid"
