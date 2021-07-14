@@ -34,15 +34,15 @@ module "ssh_security_group" {
   ingress_cidr_blocks = ["0.0.0.0/0"]
 }
 
-data "aws_ami" "rhel8" {
-  most_recent = true
-  owners      = ["amazon"]
+# data "aws_ami" "rhel8" {
+#   most_recent = true
+#   owners      = ["amazon"]
 
-  filter {
-    name   = "imageid"
-    values = ["ami-01fe4e01d242f9032"]
-  }
-}
+#   filter {
+#     name   = "imageid"
+#     values = ["ami-01fe4e01d242f9032"]
+#   }
+# }
 
 resource "random_pet" "app" {
   length    = 2
