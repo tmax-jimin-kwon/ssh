@@ -2,7 +2,7 @@ resource "aws_instance" "test" {
   count = var.enable_test_env ? var.test_instance_count : 0
 
 #   ami                    = data.aws_ami.rhel8.id
-  ami                    = "ami-01fe4e01d242f9032"
+  ami                    = "ami-0397f53d6bf41d481"
   instance_type          = "t2.micro"
    
   key_name		 = "test"
